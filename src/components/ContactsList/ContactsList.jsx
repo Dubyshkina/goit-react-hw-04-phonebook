@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import s from '../ContactsList/ContactsList.module.css';
 
-const ContactsList = ({ contacts, handleDeleteBtn }) => {
+export const ContactsList = ({ contacts, handleDeleteBtn }) => {
   return (
     <ul className={s.list}>
       {contacts.map(({ id, name, number }) => {
@@ -9,7 +9,11 @@ const ContactsList = ({ contacts, handleDeleteBtn }) => {
           <li key={id}>
             <span>{name}: </span>
             <span>{number}</span>
-            <button className={s.btn} type="button" onClick={() => handleDeleteBtn(id)}>
+            <button
+              className={s.btn}
+              type="button"
+              onClick={() => handleDeleteBtn(id)}
+            >
               Delete
             </button>
           </li>
@@ -28,5 +32,3 @@ ContactsList.propTypes = {
   ),
   handleDeleteBtn: PropTypes.func,
 };
-
-export default ContactsList;
