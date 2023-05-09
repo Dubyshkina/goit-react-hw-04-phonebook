@@ -9,7 +9,7 @@ export const Form = ({ addContact }) => {
 
   const handleAddContact = event => {
     event.preventDefault();
-    addContact({ name: name, number: number, id: nanoid() });
+    addContact({ name, number, id: nanoid() });
     setName('');
     setNumber('');
   };
